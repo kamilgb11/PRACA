@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Poleć kandydata</button>');
+            $("#submit").html('Poleć');
+
     function checkURLForNumbers() {
         var url = window.location.href;
 
@@ -27,11 +30,7 @@ $(document).ready(function() {
                     $(this).text(text); //hiszpanski
 
                 } 
-
             });
-
-           
-
             $("b").each(function() {
 
                 var text = $(this).text();
@@ -57,12 +56,7 @@ $(document).ready(function() {
                     $(this).text(text); //hiszpanski
 
                 }
-
             });
-
-            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Poleć kandydata</button>');
-            $("#submit").html('Poleć');
-
         }
     }
 
@@ -76,81 +70,102 @@ $(document).ready(function() {
 
  
 
-$(document).ready(function() {         //angielski przycisk
+$(document).ready(function() {          // angielski przycisk
     function checkForRecommend() {
+        var foundRecommend = false;
         $("span").each(function() {
-        var text = $(this).text();
+            var text = $(this).text();
 
             if (text.includes("Recommend")) {
-                $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
-                $("#submit").html('Recommend');
-                return false;
+                foundRecommend = true;
+                return false; 
             }
         });
+        if (foundRecommend) {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
+            $("#submit").html('Recommend');
+        } else {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Apply now</button>');
+            $("#submit").html('Apply');
+        }
     }
-
     checkForRecommend();
-
     $("#hsubmit").click(function() {
         $("#submit").trigger('click');
     });
 });
 
-$(document).ready(function() {         //ukrainski przycisk
-    function checkForRecommend() {
+
+$(document).ready(function() {          // ukrainski przycisk - przetlumaczyc
+    function checkForRecommendU() {
+        var foundRecommendU = false;
         $("span").each(function() {
-        var text = $(this).text();
+            var text = $(this).text();
 
             if (text.includes("Recommend")) {
-                $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
-                $("#submit").html('Recommend');
-                return false;
+                foundRecommendU = true;
+                return false; 
             }
         });
+        if (foundRecommendU) {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
+            $("#submit").html('Recommend');
+        } else {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Apply now</button>');
+            $("#submit").html('Apply');
+        }
     }
-
-    checkForRecommend();
-
+    checkForRecommendU();
     $("#hsubmit").click(function() {
         $("#submit").trigger('click');
     });
 });
 
-$(document).ready(function() {         //rosyjski przycisk
-    function checkForRecommend() {
+$(document).ready(function() {          // rosyjski przycisk - przetlumaczyc 
+    function checkForRecommendR() {
+        var foundRecommendR = false;
         $("span").each(function() {
-        var text = $(this).text();
+            var text = $(this).text();
 
             if (text.includes("Recommend")) {
-                $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
-                $("#submit").html('Recommend');
-                return false;
+                foundRecommendR = true;
+                return false; 
             }
         });
+        if (foundRecommendR) {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
+            $("#submit").html('Recommend');
+        } else {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Apply now</button>');
+            $("#submit").html('Apply');
+        }
     }
-
-    checkForRecommend();
-
+    checkForRecommendR();
     $("#hsubmit").click(function() {
         $("#submit").trigger('click');
     });
 });
 
-$(document).ready(function() {         //hiszpanski przycisk
-    function checkForRecommend() {
+$(document).ready(function() {          // hiszpanski przycisk
+    function checkForRecommendH() {
+        var foundRecommendH = false;
         $("span").each(function() {
-        var text = $(this).text();
+            var text = $(this).text();
 
-            if (text.includes("Recommend")) {
-                $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recommend candidate</button>');
-                $("#submit").html('Recommend');
-                return false;
+            if (text.includes("Recomendar")) {
+                foundRecommendH = true;
+                return false; 
             }
         });
+        if (foundRecommendH) {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Recomendar un candidato</button>');
+            $("#submit").html('Recomendar');
+        } else {
+            $("#logo").html('<button type="submit" class="btn btn-brand btn-lg m-0 m-t-15 m-b-30 offer-submit-button" id="hsubmit">Aplica ya</button>');
+            $("#submit").html('Aplica');
+        }
     }
-
-    checkForRecommend();
-
+    checkForRecommendH();
     $("#hsubmit").click(function() {
         $("#submit").trigger('click');
     });
